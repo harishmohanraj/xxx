@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for fastagency-app-ad720d7a-100c-4046-9e85-f67f9cea13be-client on 2024-06-20T05:01:24Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'fastagency-app-ad720d7a-100c-4046-9e85-f67f9cea13be-client'
+primary_region = 'mia'
+
+[build]
+
+[http_service]
+  internal_port = 8043
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
